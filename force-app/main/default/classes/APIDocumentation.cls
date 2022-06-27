@@ -45,9 +45,9 @@ public with sharing class APIDocumentation {
             WHERE Id =: fileId
         ];
  
-        String changedBody = EncodingUtil.base64Encode(a.Body);
+        String existingBody = EncodingUtil.base64Encode(a.Body);
  
-        a.Body = EncodingUtil.base64Decode(changedBody + base64Data);
+        a.Body = EncodingUtil.base64Decode(existingBody + base64Data);
  
         update a;
     }
