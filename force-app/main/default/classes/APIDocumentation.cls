@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 06-27-2022
+ * @last modified on  : 06-29-2022
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class APIDocumentation {
@@ -45,9 +45,9 @@ public with sharing class APIDocumentation {
             WHERE Id =: fileId
         ];
  
-        String existingBody = EncodingUtil.base64Encode(a.Body);
+        String newBody = EncodingUtil.base64Encode(a.Body);
  
-        a.Body = EncodingUtil.base64Decode(existingBody + base64Data);
+        a.Body = EncodingUtil.base64Decode(newBody + base64Data);
  
         update a;
     }
